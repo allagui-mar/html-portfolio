@@ -1,0 +1,42 @@
+ALGORITHM Read_sentence
+VAR
+    number_sentence,number_voyels,number_word,i,L,number_character:INTEGER
+    sentence:STRING
+BEGIN
+    Read(sentence)
+    L:=sentence.LENGTH
+
+//1er boucle  number sentence
+ VAR 
+    number_sentence:=0
+    i=0
+    WHILE (i< (L-1))  DO
+    number_sentence=number_sentence+1
+    i:=i+1
+    END_WHILE
+    write("number_sentence=",number_sentence)
+    // 2 eme boucle number word
+VAR 
+ number_word:=0
+ i=0
+ for (i FROM 0 TO (L-1))DO  // (l-1)because The last character is the point.
+    IF  (sentence[i] =" ") 
+    number_word := number_word + 1 //add the 1 for the last word
+    END_IF
+ END_for
+ write("number_word=",number_word)
+ 
+
+//3eme boucle number voyels
+ VAR
+ number_voyels:=0
+ i:=0
+ WHILE (i<(L-1)) DO //i<a because The last character is the point.
+    IF (sentence[i].tolowercase()=["a" or "o" or "i" or "e" or "u" or "é" or "è" or "à" ]) THEN
+        number_voyels:=number_voyels+1
+    END IF 
+    i=i+1
+ END_WHILE
+ write("number_voyels="number_voyels)
+ number_character=number_sentence-number_sentence
+ END
